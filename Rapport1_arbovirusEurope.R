@@ -354,11 +354,14 @@ mean_risk_map = mean(my_stack)#la moyenne des prédictions faites
 
 par(mfrow=c(1,1), mar=c(3,3,3,4))
 cols_consensus = rev(colorRampPalette(brewer.pal(9,"RdYlBu"))(100))
-plot(mean_risk_map, col=cols_consensus, main="Carte de Consensus : Risque Moyen d'Arbovirus (n=50)", 
-     axes=F, box=F)
-plot(EU, add=T, border="gray30", lwd=0.7) # Ajoute les contours de l'Europe
-plot(mean_risk_map, col=cols_consensus, legend.only=T, add=T, legend.width=1,
-     legend.shrink=0.5, axis.args=list(cex.axis=0.8))
+plot(mean_risk_map, col=cols_consensus, 
+     main="Carte de Consensus : Risque Moyen d'Arbovirus (n=50)", 
+     axes=F, box=F, legend=FALSE)
+plot(EU, add=T, border="gray30", lwd=0.7)
+plot(mean_risk_map, col=cols_consensus, legend.only=T, add=T, 
+     legend.width=1, legend.shrink=0.5, 
+     axis.args=list(cex.axis=0.8))
+
 #7PREMIERs REPLICATs EXEMPLE : VISUALISATION 
 par(mfrow=c(1,7), oma=c(0,0,1.5,0), mar=c(0.75,0,0,0), lwd=0.2, col="gray30",
     col.axis="gray30", fg="gray30") 
@@ -458,7 +461,13 @@ for(i in 1:dim(relative_importances)[2]) {
   ci05 = round(t.test(relative_importances[,i], conf.level=0.05)$conf.int[1:2], 1)
   RI_summary[i, "CI95"] = paste0("[", ci95[1], ", ", ci95[2], "]")
   RI_summary[i, "CI05"] = paste0("[", ci05[1], ", ", ci05[2], "]")
+   # AUC pondéré par la RI de chaque réplicat pour cette variable
+  ri_vals  = relative_importances[,i]          # RI de la variable i sur les 50 réplicats
+  auc_vals = AUCs[,1]                           # AUC des 50 réplicats
+  weights  = ri_vals / sum(ri_vals)             # poids proportionnels à la RI
+  RI_summary[i, "AUC_weighted"] = round(sum(weights * auc_vals), 3)
 }
+RI_summary[i, "AUC_mean"] = round(mean(AUCs[,1]), 3)
 RI_summary  # les facteurs environnementales qui influencent le virus
 
 
