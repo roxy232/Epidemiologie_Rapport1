@@ -57,7 +57,7 @@ On détermine si la robustesse des arbres avec AUC.
 Output: carte de risque ![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/risque_virus.png)
 
 #7PREMIERs REPLICATs EXEMPLE : VISUALISATION 
-![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Incertitude-Etape7.png)
+![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/plotSTEP6.png)
 
 #CALCUL DE LA VARIABILITÉ (INCERTITUDE)  forcer le min à 0 et max à 1 : 
 ![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Capture%20d'%C3%A9cran%202026-05-15%20110921.png)
