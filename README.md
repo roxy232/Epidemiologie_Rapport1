@@ -63,8 +63,3 @@ Output: carte de risque ![texte](https://github.com/roxy232/Epidemiologie_Rappor
 et l'étape 9 est la visialisation de la niche écologique avec RI 
 Output : Visualisation DE RI
 ![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/ETAPE9.png "Niche") 
-![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Capture%20d'%C3%A9cran%202026-04-05%20182314.png)
-![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Capture%20d'%C3%A9cran%202026-04-05%20182326.png)
-![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Capture%20d'%C3%A9cran%202026-04-05%20182335.png)
-
-
