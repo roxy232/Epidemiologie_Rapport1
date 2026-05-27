@@ -20,7 +20,7 @@ library(blockCV); library(dismo); library(gbm); library(ncf) ;
 ```
 
 ### 2. La localisation de l'étude : #Zone d'étude est l'Europe : EU = shapefile("") grâce au fichier : 
-
+![texte](C:\Users\hoste\OneDrive - Université Libre de Bruxelles\Documents\Cours\VIRUS\Tdegrp\PHOTO\HAutomne.jpg "Europe HAutomne")
 ### 3. Les fichiers d'entrée sont dans le dossier Raster_environnement afin d'avoir tous les variables environnementals séléctionnées. 
 
 ```
