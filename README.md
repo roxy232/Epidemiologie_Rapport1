@@ -16,13 +16,15 @@ Le fichier Rapport1_arbovirusEurope.R réalise toutes les étapes.
 
 ### 1. Utilisation de packages : 
 ```library(raster); library(sf); library(sp); library(RColorBrewer)
-library(blockCV); library(dismo); library(gbm); library(ncf) ;```
+library(blockCV); library(dismo); library(gbm); library(ncf) ;
+```
 
-### 2. La localisation de l'étude : #Zone d'étude est l'Europe : ```EU = shapefile("")``` grâce au fichier : 
+### 2. La localisation de l'étude : #Zone d'étude est l'Europe : EU = shapefile("") grâce au fichier : 
 
 ### 3. Les fichiers d'entrée sont dans le dossier Raster_environnement afin d'avoir tous les variables environnementals séléctionnées. 
+
 ```
-Etape 1 : définir les variables de l'environmentale a été :''
+#Etape 1 : définir les variables de l'environmentale a été :''
 envVariableNames = c("croplands_all_categories","human_pop_density_log10","managed_pasture_and_rangeland","Precipitation_inFall",
 "Precipitation_spring","Precipitation_summer","Precipitation_winter","primary_forest_areas","primary_non_forest_areas","relative_Humidity_inFall","relative_Humidity_spring","relative_Humidity_summer","relative_Humidity_winter","secondary_forest_areas","secondary_non_forest_areas","temperature_inFall","temperature_spring","temperature_summer","temperature_winter")
 envVariables = list() #On crée une liste 'envVariables' qui contient chaques couches
@@ -32,12 +34,35 @@ for (i in 1:length(envVariableNames)) {
   names(envVariables[[i]]) = envVariableNames[i]
 }
 ```
-### Cartes des variables d'environnements
+#Cartes des variables d'environnements
+Output : différentes cartes de l'Europe en fonction des variables environnementales 
 
-<img width="1165" height="712" alt="COMPARAISON_EX" src="https://github.com/user-attachments/assets/7b663f49-a0f2-4f62-a88c-272e26c50e0b" />
+#Etape 4 : ANALYSE DE L'AUTOCORRÉLATION SPATIALE (CORRÉLOGRAMMES)
+Output : 
+```
+Corrélogramme
+``` 
+#Etape 5 : Entrainement des models de niche écologique (Chaque nouvel arbre essaie de corriger les erreurs de l'arbre précédent => optimiser) 
+```
+theRanges=c(2100,2100)*1000 
+```
+Il faut adapter le chiffre 2100 si cela n'est pas la valeur limite du corrélogramme. 
+#VALIDATION CROISEE
+#ANALYSE :
+```
+AUCs=matrix(nrow=number_of_replicates,ncol=1) #vérifie si le résultat du modèle final est fiable/robuste
+colnames(AUCs)=c("AUC") #doit être plus proche de 1
+```
+On détermine si la robustesse des arbres avec AUC. 
 
-Outputs : AUC, Relative importances, BRT_model_replicates et prediction, CV for incertitude 
-and 3 figures 
+#Etape 6 : Cartographie de risque :  
+Output: carte de risque 
+#7PREMIERs REPLICATs EXEMPLE : VISUALISATION 
+#CALCUL DE LA VARIABILITÉ (INCERTITUDE)  forcer le min à 0 et max à 1 
+
+#Etape 8 : les importances relatives du virus en fonction des variables de l'environnment : RI 
+et l'étape 9 est la visialisation de la niche écologique avec RI 
+Output : Visualisation DE RI
 
 
 
