@@ -5,4 +5,4 @@ Data : Use of the Raster.asc environnemental and Arbovirus localisation to intro
 For this analyse, we use BRT model. 
 
 Outputs : AUC, Relative importances, BRT_model_replicates et prediction, CV for incertitude 
-end 3 figures 
+and 3 figures 
