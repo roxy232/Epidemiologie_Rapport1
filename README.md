@@ -38,10 +38,7 @@ for (i in 1:length(envVariableNames)) {
 Output : différentes cartes de l'Europe en fonction des variables environnementales 
 
 #Etape 4 : ANALYSE DE L'AUTOCORRÉLATION SPATIALE (CORRÉLOGRAMMES)
-Output : 
-```
-Corrélogramme
-``` 
+Output : ![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Correlation4000.png)
 #Etape 5 : Entrainement des models de niche écologique (Chaque nouvel arbre essaie de corriger les erreurs de l'arbre précédent => optimiser) 
 ```
 theRanges=c(2100,2100)*1000 
@@ -56,14 +53,15 @@ colnames(AUCs)=c("AUC") #doit être plus proche de 1
 On détermine si la robustesse des arbres avec AUC. 
 
 #Etape 6 : Cartographie de risque :  
-Output: carte de risque 
+Output: carte de risque ![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/risque_virus.png)
 #7PREMIERs REPLICATs EXEMPLE : VISUALISATION 
-#CALCUL DE LA VARIABILITÉ (INCERTITUDE)  forcer le min à 0 et max à 1 
+#CALCUL DE LA VARIABILITÉ (INCERTITUDE)  forcer le min à 0 et max à 1 : 
+![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/Capture%20d'%C3%A9cran%202026-05-15%20110921.png)
 
 #Etape 8 : les importances relatives du virus en fonction des variables de l'environnment : RI 
 et l'étape 9 est la visialisation de la niche écologique avec RI 
 Output : Visualisation DE RI
-
+![texte](https://github.com/roxy232/Epidemiologie_Rapport1/blob/main/Photo/ETAPE9.png "Niche") 
 
 
 
